@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 
-class ClassWithState extends Component {
+class ClassComponent extends Component {
 
     constructor(props) {
         super(props)
@@ -28,4 +28,4 @@ class ClassWithState extends Component {
     }
 }
 
-export default ClassWithState
+export default ClassComponent

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FunctionWithState = () => {
+const FunctionalComponent = () => {
 
     const [count, setCount] = useState(0);
     
@@ -12,4 +12,4 @@ const FunctionWithState = () => {
     );
 }
 
-export default FunctionWithState;
+export default FunctionalComponent;
