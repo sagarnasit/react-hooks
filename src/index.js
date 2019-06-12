@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import ClassComponent from './state-hook/ClassComponent'
+// import Counter from './state-hook/Counter'
+// import CounterWithFunction from './state-hook/CounterWithFunction';
+import EffectHook from './effect-hook/EffectHook';
+import UserList from './custom-hook/UserList'
 
-ReactDOM.render(<ClassComponent />, document.getElementById('root'));
+ReactDOM.render(<EffectHook />, document.getElementById('root'));

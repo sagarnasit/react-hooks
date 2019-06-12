@@ -1,21 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import useFetch from './useFetch';
 
 const UserList = () => {
-    const data = useFetch('https://api.github.com/users');
 
-    console.log(data);
+    const [user, setUser] = useState('sagarnasit')
+    
+    const users = useFetch('https://api.github.com/users');
+    const userData = useFetch(`https://api.github.com/users/${user}`)
+
     return (
         <div>
-            
-            <p>
-            { data.loading && 'Loading...' }
-            </p>
             <div>
-            {!data.loading &&
-            data.map( el => (
-                <li key={el.id}>{el.login}</li>
-            ))}
+                {
+                    Object.keys(userData).length ?
+                    <img src={userData.avatar_url} alt='User Avatar' />
+                    : ''
+                }
+            </div>
+            <div>
+                <select onChange={e => setUser(e.target.value)}>
+                    <option value='sagarnasit'>sagarnasit</option>
+                    {
+                        users.length ?
+                        users.map( user => (
+                            <option key={user.id} value={user.login}>
+                                {user.login}
+                            </option>
+                        )) : 'Loading'
+                    }
+            </select>
             </div>
             
         </div>
